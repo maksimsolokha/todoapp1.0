@@ -1,0 +1,43 @@
+.list {
+	margin-bottom: 30px;
+	li {
+		display: flex;
+		align-items: center;
+
+		padding: 10px 12px;
+		cursor: pointer;
+		font-weight: 500;
+
+		&.active {
+			background: #ffffff;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+			border-radius: 4px;
+		}
+		i {
+			margin-right: 10px;
+			display: inline-flex;
+		}
+
+		.badge {
+			&--red {
+				width: 10px;
+				height: 10px;
+				border-radius: 30px;
+				background-color: red;
+			}
+			&--blue {
+				width: 10px;
+				height: 10px;
+				border-radius: 30px;
+				background-color: blue;
+			}
+
+			&--pink {
+				width: 10px;
+				height: 10px;
+				border-radius: 30px;
+				background-color: pink;
+			}
+		}
+	}
+}
