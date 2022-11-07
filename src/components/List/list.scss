@@ -1,5 +1,15 @@
 .list {
+	$self: &;
 	margin-bottom: 30px;
+	&__add-button {
+		opacity: 0.4;
+		transition: all 0.2;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
 	li {
 		display: flex;
 		align-items: center;
@@ -7,37 +17,40 @@
 		padding: 10px 12px;
 		cursor: pointer;
 		font-weight: 500;
-
-		&.active {
-			background: #ffffff;
-			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
-			border-radius: 4px;
-		}
-		i {
-			margin-right: 10px;
-			display: inline-flex;
-		}
+		margin-bottom: 5px;
+		transition: all 0.4s ease-in;
 
 		.badge {
-			&--red {
-				width: 10px;
-				height: 10px;
-				border-radius: 30px;
-				background-color: red;
-			}
-			&--blue {
-				width: 10px;
-				height: 10px;
-				border-radius: 30px;
-				background-color: blue;
-			}
-
-			&--pink {
-				width: 10px;
-				height: 10px;
-				border-radius: 30px;
-				background-color: pink;
+			position: relative;
+			left: 5px;
+		}
+		&:hover #{$self}__remove-icon {
+			opacity: 0.3;
+			&:hover {
+				opacity: 0.8;
 			}
 		}
+		&:hover {
+			background: rgba(255, 255, 255, 0.5);
+		}
+	}
+
+	&__remove-icon {
+		opacity: 0;
+		transition: opacity 0.4s ease-in-out;
+	}
+
+	span {
+		flex: 1;
+	}
+
+	&.active {
+		background: #ffffff;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+		border-radius: 4px;
+	}
+	i {
+		margin-right: 10px;
+		display: inline-flex;
 	}
 }
